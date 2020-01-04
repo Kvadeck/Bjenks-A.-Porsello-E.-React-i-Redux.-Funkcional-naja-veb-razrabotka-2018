@@ -444,8 +444,8 @@ const serializeClockTime = date =>
 
  const appendAMPM = clockTime =>
  ({
- ...clockTime,
- ampm: (clockTime.hours >= 12) ? "PM" : "AM"
+    ...clockTime,
+    ampm: (clockTime.hours >= 12) ? "PM" : "AM"
  })
 
  const display = target => time => target(time)
@@ -460,9 +460,7 @@ const serializeClockTime = date =>
 const prependZero = key => clockTime =>
 ({
     ...clockTime,
-    [key]: (clockTime[key] < 10) ?
-    "0" + clockTime[key] :
-    clockTime[key]
+    [key]: (clockTime[key] < 10) ? "0" + clockTime[key] : clockTime[key]
 })
 
 const convertToCivilianTime = clockTime =>
